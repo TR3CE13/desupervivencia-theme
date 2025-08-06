@@ -10,3 +10,18 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, responsive-layout
 */
+/* --- Estilos de Enlaces Personalizados --- */
+
+/* Estilo general para todos los enlaces del contenido */
+.entry-content a {
+  color: #C15711; /* El color naranja/óxido que elijas */
+  text-decoration: none; /* Quitamos el subrayado por defecto */
+  border-bottom: 2px dotted #C15711; /* Añadimos un subrayado de puntos más sutil */
+  transition: all 0.2s ease-in-out; /* Una transición suave para el efecto hover */
+}
+
+/* Estilo cuando el ratón pasa por encima del enlace */
+.entry-content a:hover {
+  color: #E77B2F; /* Un naranja un poco más brillante */
+  border-bottom-style: solid; /* El subrayado de puntos se convierte en una línea sólida */
+}
