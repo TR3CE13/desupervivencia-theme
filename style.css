@@ -25,3 +25,15 @@
   color: #E77B2F; /* Un naranja un poco más brillante */
   border-bottom-style: solid; /* El subrayado de puntos se convierte en una línea sólida */
 }
+
+/* --- Caja de Consejo Pro --- */
+.consejo-pro {
+  background-color: #f0f4f8; /* Un fondo azulado muy claro */
+  border-left: 5px solid #4a90e2; /* Un borde izquierdo azul más oscuro */
+  padding: 20px;
+  margin: 25px 0; /* Espacio arriba y abajo */
+  border-radius: 5px;
+}
+.consejo-pro p {
+  margin-bottom: 0; /* Quitamos el margen extra del párrafo si lo hay */
+}
