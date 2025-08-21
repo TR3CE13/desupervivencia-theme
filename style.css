@@ -37,3 +37,15 @@
 .consejo-pro p {
   margin-bottom: 0; /* Quitamos el margen extra del párrafo si lo hay */
 }
+
+/* --- [FIX] Anular borde inferior de los encabezados del tema --- */
+.entry-content .wp-block-heading,
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  border-bottom: none !important;
+  box-shadow: none !important; /* Añadimos esto por si acaso es una sombra y no un borde */
+}
