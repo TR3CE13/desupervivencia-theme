@@ -49,3 +49,54 @@
   border-bottom: none !important;
   box-shadow: none !important; /* Añadimos esto por si acaso es una sombra y no un borde */
 }
+
+/* --- [PRO] Estilos Personalizados para Cajas de Producto AAWP --- */
+
+/* Contenedor principal de la caja */
+.aawp-product {
+  border: 1px solid #e1e1e1; /* Un borde sutil que define la caja */
+  border-radius: 8px;         /* Bordes redondeados, más moderno */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra suave para darle profundidad */
+  transition: all 0.2s ease-in-out;
+  background-color: #ffffff; /* Fondo blanco limpio */
+}
+
+/* Efecto al pasar el ratón por encima */
+.aawp-product:hover {
+  transform: translateY(-5px); /* La caja se eleva un poco */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* La sombra se hace más pronunciada */
+}
+
+/* Título del Producto */
+.aawp-product__title {
+  font-size: 1.1rem !important; /* Un poco más grande para que destaque */
+  font-weight: 700 !important;   /* En negrita */
+  color: #1a1a1a;
+}
+
+/* Imagen del Producto */
+.aawp-product__image-link {
+  border-radius: 8px 8px 0 0; /* Redondeamos solo las esquinas superiores de la imagen */
+  overflow: hidden; /* Nos aseguramos de que la imagen no se salga de los bordes redondeados */
+}
+
+/* El Botón de Compra - ¡LA CLAVE! */
+.aawp-button, .aawp-button:link, .aawp-button:visited {
+  background-color: #ff9900 !important; /* El naranja de Amazon, genera confianza y resalta */
+  color: #1a1a1a !important;             /* Texto oscuro para buen contraste */
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;          /* Texto del botón en negrita */
+  text-transform: uppercase !important;   /* TODO EN MAYÚSCULAS */
+  padding: 12px 20px !important;
+  font-size: 0.9rem !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efecto del botón al pasar el ratón */
+.aawp-button:hover {
+  background-color: #ffad33 !important; /* Un naranja un poco más brillante */
+  color: #000000 !important;
+  transform: scale(1.05); /* El botón se hace un poquito más grande */
+}
