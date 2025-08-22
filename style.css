@@ -1,139 +1,125 @@
 /*
  Theme Name:   Kadence Child
- Theme URI:    https://desupervivencia.org
+ Theme URI:    https://desupervivencia.online
  Description:  Tema hijo para el tema Kadence
- Author:       tr3ce
- Author URI:   https://desupervivencia.org
- Template:     kadence  
+ Author:       Iván (tr3ce)
+ Author URI:   https://desupervivencia.online
+ Template:     kadence
  Version:      1.0.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         light, responsive-layout
 */
-/* --- Estilos de Enlaces Personalizados --- */
 
-/* Estilo general para todos los enlaces del contenido */
-.entry-content a {
-  color: #C15711; /* El color naranja/óxido que elijas */
-  text-decoration: none; /* Quitamos el subrayado por defecto */
-  border-bottom: 2px dotted #C15711; /* Añadimos un subrayado de puntos más sutil */
-  transition: all 0.2s ease-in-out; /* Una transición suave para el efecto hover */
+/* --- [PRO] Sistema de Diseño Global --- */
+:root {
+  --color-primario: #C15711;       /* Naranja óxido para enlaces y acentos */
+  --color-primario-hover: #E77B2F; /* Naranja más brillante para hover */
+  --color-secundario: #4a90e2;    /* Azul para cajas de consejo y elementos de confianza */
+  --color-texto: #333333;         /* Gris oscuro para el texto, más suave que el negro puro */
+  --color-fondo-claro: #f0f4f8;   /* Fondo muy claro para cajas */
+  --color-borde-sutil: #e1e1e1;   /* Borde gris claro para cajas y tablas */
+  --color-amazon: #ff9900;        /* Naranja oficial de Amazon para botones */
+  --color-amazon-hover: #ffad33;  /* Naranja de Amazon más brillante */
 }
 
-/* Estilo cuando el ratón pasa por encima del enlace */
+/* --- Estilos de Enlaces Personalizados --- */
+.entry-content a {
+  color: var(--color-primario);
+  text-decoration: none;
+  border-bottom: 2px dotted var(--color-primario);
+  transition: all 0.2s ease-in-out;
+}
 .entry-content a:hover {
-  color: #E77B2F; /* Un naranja un poco más brillante */
-  border-bottom-style: solid; /* El subrayado de puntos se convierte en una línea sólida */
+  color: var(--color-primario-hover);
+  border-bottom-style: solid;
 }
 
 /* --- Caja de Consejo Pro --- */
 .consejo-pro {
-  background-color: #f0f4f8; /* Un fondo azulado muy claro */
-  border-left: 5px solid #4a90e2; /* Un borde izquierdo azul más oscuro */
-  padding: 20px;
-  margin: 25px 0; /* Espacio arriba y abajo */
-  border-radius: 5px;
+  background-color: var(--color-fondo-claro);
+  border-left: 5px solid var(--color-secundario);
+  padding: 20px 25px;
+  margin: 30px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.consejo-pro strong {
+  color: var(--color-secundario);
 }
 .consejo-pro p {
-  margin-bottom: 0; /* Quitamos el margen extra del párrafo si lo hay */
+  margin-bottom: 0;
 }
 
 /* --- [FIX] Anular borde inferior de los encabezados del tema --- */
 .entry-content .wp-block-heading,
-.entry-content h1,
-.entry-content h2,
-.entry-content h3,
-.entry-content h4,
-.entry-content h5,
-.entry-content h6 {
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
   border-bottom: none !important;
-  box-shadow: none !important; /* Añadimos esto por si acaso es una sombra y no un borde */
+  box-shadow: none !important;
 }
 
 /* --- [PRO] Estilos Personalizados para Cajas de Producto AAWP --- */
-
-/* Contenedor principal de la caja */
 .aawp-product {
-  border: 1px solid #e1e1e1; /* Un borde sutil que define la caja */
-  border-radius: 8px;         /* Bordes redondeados, más moderno */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra suave para darle profundidad */
+  border: 1px solid var(--color-borde-sutil);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: all 0.2s ease-in-out;
-  background-color: #ffffff; /* Fondo blanco limpio */
+  background-color: #ffffff;
 }
-
-/* Efecto al pasar el ratón por encima */
 .aawp-product:hover {
-  transform: translateY(-5px); /* La caja se eleva un poco */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* La sombra se hace más pronunciada */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
-
-/* Título del Producto */
 .aawp-product__title {
-  font-size: 1.1rem !important; /* Un poco más grande para que destaque */
-  font-weight: 700 !important;   /* En negrita */
-  color: #1a1a1a;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: var(--color-texto);
 }
-
-/* Imagen del Producto */
 .aawp-product__image-link {
-  border-radius: 8px 8px 0 0; /* Redondeamos solo las esquinas superiores de la imagen */
-  overflow: hidden; /* Nos aseguramos de que la imagen no se salga de los bordes redondeados */
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
 }
-
-/* El Botón de Compra - ¡LA CLAVE! */
 .aawp-button, .aawp-button:link, .aawp-button:visited {
-  background-color: #ff9900 !important; /* El naranja de Amazon, genera confianza y resalta */
-  color: #1a1a1a !important;             /* Texto oscuro para buen contraste */
+  background-color: var(--color-amazon) !important;
+  color: #1a1a1a !important;
   border: none !important;
   border-radius: 6px !important;
-  font-weight: 700 !important;          /* Texto del botón en negrita */
-  text-transform: uppercase !important;   /* TODO EN MAYÚSCULAS */
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
   padding: 12px 20px !important;
   font-size: 0.9rem !important;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: all 0.2s ease-in-out;
 }
-
-/* Efecto del botón al pasar el ratón */
 .aawp-button:hover {
-  background-color: #ffad33 !important; /* Un naranja un poco más brillante */
+  background-color: var(--color-amazon-hover) !important;
   color: #000000 !important;
-  transform: scale(1.05); /* El botón se hace un poquito más grande */
+  transform: scale(1.05);
 }
 
 /* --- [PRO] Estilos para Tablas Comparativas AAWP --- */
-
-/* Hacemos la tabla responsive en móviles */
 .aawp-table-responsive {
-  border: 1px solid #e1e1e1;
+  border: 1px solid var(--color-borde-sutil);
   border-radius: 8px;
-  overflow: hidden; /* Para que los bordes redondeados funcionen */
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   margin-bottom: 30px;
 }
-
-/* Cabecera de la tabla */
 .aawp-table thead th {
-  background-color: #f5f5f5; /* Un gris muy claro para la cabecera */
+  background-color: #f5f5f5;
   font-weight: 700;
-  color: #333;
+  color: var(--color-texto);
   text-align: center;
-  border-bottom: 2px solid #e1e1e1;
+  border-bottom: 2px solid var(--color-borde-sutil);
 }
-
-/* Celdas de la tabla */
 .aawp-table td {
-  text-align: center;   /* Centramos todo para que sea fácil de escanear */
-  vertical-align: middle !important; /* Alineamos verticalmente todo al centro */
-  border-right: 1px dashed #e1e1e1;
+  text-align: center;
+  vertical-align: middle !important;
+  border-right: 1px dashed var(--color-borde-sutil);
 }
-
-/* Quitamos el borde derecho de la última celda */
 .aawp-table td:last-child {
   border-right: none;
 }
-
-/* Efecto hover en las filas para guiar la vista */
 .aawp-table tbody tr:hover {
   background-color: #f9f9f9;
 }
