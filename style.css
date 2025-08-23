@@ -59,27 +59,45 @@
 }
 
 /* --- [PRO] Estilos Personalizados para Cajas de Producto AAWP --- */
-.aawp-product {
-  border: 1px solid var(--color-borde-sutil);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: all 0.2s ease-in-out;
-  background-color: #ffffff;
+/* Contenedor principal de la caja - Ahora atacamos todas sus variantes */
+.aawp-product,
+.aawp-product--horizontal {
+  border: 1px solid var(--color-borde-sutil) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+  transition: all 0.2s ease-in-out !important;
+  background-color: #ffffff !important;
 }
-.aawp-product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+
+/* Efecto al pasar el ratón por encima */
+.aawp-product:hover,
+.aawp-product--horizontal:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12) !important;
 }
-.aawp-product__title {
+
+/* Título del Producto - Forzamos el color y quitamos subrayados que a veces mete */
+.aawp-product__title,
+.aawp-product__title a,
+.aawp-product__title a:link,
+.aawp-product__title a:visited {
   font-size: 1.1rem !important;
   font-weight: 700 !important;
-  color: var(--color-texto);
+  color: var(--color-texto) !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
 }
+
+/* Imagen del Producto */
 .aawp-product__image-link {
-  border-radius: 8px 8px 0 0;
-  overflow: hidden;
+  border-radius: 8px 8px 0 0 !important;
+  overflow: hidden !important;
 }
-.aawp-button, .aawp-button:link, .aawp-button:visited {
+
+/* El Botón de Compra - ¡LA CLAVE! */
+.aawp-button,
+.aawp-button:link,
+.aawp-button:visited {
   background-color: var(--color-amazon) !important;
   color: #1a1a1a !important;
   border: none !important;
@@ -88,13 +106,15 @@
   text-transform: uppercase !important;
   padding: 12px 20px !important;
   font-size: 0.9rem !important;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2) !important;
+  transition: all 0.2s ease-in-out !important;
 }
+
+/* Efecto del botón al pasar el ratón */
 .aawp-button:hover {
   background-color: var(--color-amazon-hover) !important;
   color: #000000 !important;
-  transform: scale(1.05);
+  transform: scale(1.05) !important;
 }
 
 /* --- [PRO] Estilos para Tablas Comparativas AAWP --- */
@@ -122,4 +142,44 @@
 }
 .aawp-table tbody tr:hover {
   background-color: #f9f9f9;
+}
+
+/* --- [PRO] Botón de Volver Arriba --- */
+#botonVolverArriba {
+  display: inline-block;
+  background-color: var(--color-primario); /* Usamos nuestro naranja */
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 50%; /* Lo hacemos redondo */
+  position: fixed; /* ¡LA CLAVE! Se queda fijo en la pantalla */
+  bottom: 30px;
+  right: 30px;
+  transition: all 0.3s ease;
+  z-index: 1000; /* Para que esté por encima de todo */
+  opacity: 0; /* Por defecto está oculto */
+  visibility: hidden; /* Y completamente invisible */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* El estilo de la flecha */
+#botonVolverArriba::after {
+  content: "↑";
+  font-family: monospace;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 48px;
+  color: #fff;
+}
+
+/* Clase que añadiremos con JS para mostrarlo */
+#botonVolverArriba.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Efecto al pasar el ratón */
+#botonVolverArriba:hover {
+  background-color: var(--color-primario-hover);
+  transform: translateY(-3px);
 }
